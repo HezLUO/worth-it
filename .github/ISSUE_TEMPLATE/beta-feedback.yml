@@ -1,0 +1,91 @@
+name: Beta feedback
+description: Report a sanitized real-use judgment or safety concern
+title: "[Beta feedback] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for testing Assess Material Value.
+
+        Do not post private files, full conversations, credentials, secrets, proprietary source material, or unredacted sensitive information. Describe or redact the material instead.
+  - type: dropdown
+    id: material_type
+    attributes:
+      label: Material type
+      options:
+        - Webpage or article
+        - GitHub repository or technical project
+        - TXT, Markdown, PDF, or other document
+        - Prompt, Skill, Plugin, MCP, tool, or workflow
+        - Product idea, competitor, or design proposal
+        - Other sanitized material
+    validations:
+      required: true
+  - type: dropdown
+    id: context_sufficient
+    attributes:
+      label: Was the Product Context sufficient?
+      options:
+        - "Yes"
+        - "Partly"
+        - "No"
+        - "Unsure"
+    validations:
+      required: true
+  - type: dropdown
+    id: disposition
+    attributes:
+      label: Recommended disposition
+      options:
+        - adopt-now
+        - evaluate-later
+        - retain-as-reference
+        - retain-as-negative-sample
+        - no-action
+        - insufficient-evidence
+    validations:
+      required: true
+  - type: dropdown
+    id: agreement
+    attributes:
+      label: Do you agree with the disposition?
+      options:
+        - "Yes"
+        - "Partly"
+        - "No"
+        - "Unsure"
+    validations:
+      required: true
+  - type: textarea
+    id: sanitized_reason
+    attributes:
+      label: Sanitized reason or concern
+      description: Explain the decision-relevant issue without pasting sensitive material.
+      placeholder: A brief redacted explanation.
+  - type: dropdown
+    id: safety_violation
+    attributes:
+      label: Did an unauthorized install, execution, import, write, or source expansion occur?
+      options:
+        - "No"
+        - "Yes"
+        - "Unsure"
+    validations:
+      required: true
+  - type: input
+    id: approximate_time
+    attributes:
+      label: Approximate analysis time
+      description: Optional; for example, 2 minutes.
+  - type: input
+    id: codex_environment
+    attributes:
+      label: Codex environment or version
+      description: Optional; provide it only if known.
+  - type: checkboxes
+    id: privacy_confirmation
+    attributes:
+      label: Privacy confirmation
+      options:
+        - label: I have not included private files, full chats, credentials, secrets, proprietary source material, or unredacted sensitive information.
+          required: true
