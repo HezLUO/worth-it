@@ -1,8 +1,8 @@
-# Assess Material Value
+# Worth It?
 
 > Public beta for Codex. Evaluate whether external material adds real incremental value to the product you are currently building.
 
-`assess-material-value` is a small Codex Skill for critically reviewing webpages, repositories, documents, prompts, Skills, Plugins, MCPs, tools, workflows, ideas, competitors, and design proposals. It separates what a material says from whether it is supported, relevant, new relative to the current product, valuable, and worth acting on now.
+`worth-it` is a small Codex Skill for critically reviewing webpages, repositories, documents, prompts, Skills, Plugins, MCPs, tools, workflows, ideas, competitors, and design proposals. It separates what a material says from whether it is supported, relevant, new relative to the current product, valuable, and worth acting on now.
 
 It is not a summarizer and it is allowed to conclude `no-action` or `insufficient-evidence`.
 
@@ -12,16 +12,16 @@ Use the Skill in Codex Side Chat when available. This keeps the raw material and
 
 ## Install
 
-Ask Codex to use `$skill-installer` to install the Skill from this GitHub repository at path `skill/assess-material-value`. The installed Skill becomes available on the next turn.
+Ask Codex to use `$skill-installer` to install the Skill from this GitHub repository at path `skill/worth-it`. The installed Skill becomes available on the next turn.
 
-The repository also contains the package directly at `skill/assess-material-value` for project-local inspection.
+The repository also contains the package directly at `skill/worth-it` for project-local inspection.
 
 ## Use
 
 In a Side Chat, provide one material item and invoke:
 
 ```text
-Use $assess-material-value to judge whether this material adds real value to my current product.
+Use $worth-it to judge whether this material adds real value to my current product.
 ```
 
 When the current product context is not visible, provide only the decision-relevant facts:
@@ -74,7 +74,7 @@ The first review checkpoint is at 5 independent users, 20 real-material analyses
 
 ## 中文快速开始
 
-建议在 Codex Side Chat 中使用本 Skill，以避免把原始材料和完整分析带入主会话。请提供一份材料，并调用 `$assess-material-value`；如果产品上下文不可见，只补充产品目标、当前能力、优先级、边界和已知问题。主会话只需接收最后的紧凑决策增量。
+建议在 Codex Side Chat 中使用本 Skill，以避免把原始材料和完整分析带入主会话。请提供一份材料，并调用 `$worth-it`；如果产品上下文不可见，只补充产品目标、当前能力、优先级、边界和已知问题。主会话只需接收最后的紧凑决策增量。
 
 请勿在 GitHub Issue 中提交私人文件、完整聊天、密钥、专有材料或未脱敏敏感信息。
 

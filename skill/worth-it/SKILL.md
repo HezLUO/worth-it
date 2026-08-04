@@ -1,9 +1,9 @@
 ---
-name: assess-material-value
+name: worth-it
 description: Critically evaluate whether user-supplied webpages, repositories, documents, prompts, Skills, Plugins, MCPs, tools, workflows, ideas, competitors, or designs add real incremental value to the product currently being developed. Use in Codex Side Chat or whenever a user asks whether external material is true, relevant, novel, valuable, risky, duplicative, or worth acting on now.
 ---
 
-# Assess Material Value
+# Worth It?
 
 ## Safety Boundary
 

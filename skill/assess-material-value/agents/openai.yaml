@@ -1,4 +1,0 @@
-interface:
-  display_name: "Assess Material Value"
-  short_description: "Judge material value against product context"
-  default_prompt: "Use $assess-material-value to evaluate whether this material adds real value to my current product."
