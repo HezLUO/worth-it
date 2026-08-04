@@ -1,0 +1,4 @@
+interface:
+  display_name: "Worth It?"
+  short_description: "Judge material value against product context"
+  default_prompt: "Use $worth-it to evaluate whether this material adds real value to my current product."
