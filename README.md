@@ -46,7 +46,7 @@ Primary value types are `directly-adoptable`, `design-reference`, `evaluation-or
 - `no-action`
 - `insufficient-evidence`
 
-Only the compact decision delta should be carried back to the main conversation, and only when the user chooses to do so.
+Every assessment ends with `Main-Thread Handoff Recommendation: send | do-not-send`. When the result is `send`, the Skill also produces a compact, copy-ready `WORTH_IT_HANDOFF` containing only the product-decision delta, non-actions, and revisit condition. It never sends the block automatically or treats copying it as approval.
 
 ## Safety Boundary
 
@@ -74,7 +74,7 @@ The first review checkpoint is at 5 independent users, 20 real-material analyses
 
 ## 中文快速开始
 
-建议在 Codex Side Chat 中使用本 Skill，以避免把原始材料和完整分析带入主会话。请提供一份材料，并调用 `$worth-it`；如果产品上下文不可见，只补充产品目标、当前能力、优先级、边界和已知问题。主会话只需接收最后的紧凑决策增量。
+建议在 Codex Side Chat 中使用本 Skill，以避免把原始材料和完整分析带入主会话。请提供一份材料，并调用 `$worth-it`；如果产品上下文不可见，只补充产品目标、当前能力、优先级、边界和已知问题。每次分析都会明确建议 `send` 或 `do-not-send`；需要传回时，会生成可直接复制的 `WORTH_IT_HANDOFF`，不会自动发送。
 
 请勿在 GitHub Issue 中提交私人文件、完整聊天、密钥、专有材料或未脱敏敏感信息。
 
