@@ -100,12 +100,56 @@ Risks and Failure Modes
 Evidence Gaps
 Confidence
 
-Compact Main-Thread Handoff
+Main-Thread Handoff Recommendation
+WORTH_IT_HANDOFF (only when the recommendation is `send`)
 ```
 
 Give the direct conclusion first. Put exactly one primary disposition in `Recommended Disposition`. Keep the summary descriptive, identify duplication before novelty, and state the concrete delta or that none exists. Keep decision-relevant evidence, adoption cost, material risks, evidence gaps, and confidence distinct. Use `none identified` for an empty section instead of generic padding.
 
-Keep `Compact Main-Thread Handoff` normally within approximately 200 tokens. Include only material identity, decision-relevant incremental value, the primary risk or evidence gap when action-changing, the disposition, and one next action only when justified. Do not copy raw material or the full analysis, create a task, write into the product, or claim the user accepted the recommendation.
+After selecting the disposition and confidence, decide independently whether the main conversation should receive a handoff. Ask: if the main conversation knew this information, could it reasonably change a current or future product decision, risk boundary, evaluation method, or evidence-based revisit condition?
+
+Return `send` only when at least one concrete decision-relevant delta supports that effect. Return `do-not-send` when the remaining content is merely interesting, generic, promotional, duplicative, too vague, or unable to affect a product decision. Do not derive this recommendation mechanically from the primary disposition: a concrete future input may justify `send` for `retain-as-reference`; a boundary-changing risk may justify `send` for `no-action`; missing evidence justifies `send` only when it requires a product decision in the main conversation. Treat a conflicting product direction that needs owner resolution as a concrete delta eligible for `send`; describe the unresolved decision without choosing it.
+
+Always end with:
+
+```text
+Main-Thread Handoff Recommendation: send | do-not-send
+Reason: [one sentence]
+```
+
+For `do-not-send`, stop after `Reason`. Do not emit a handoff block.
+
+For `send`, append:
+
+```text
+WORTH_IT_HANDOFF
+
+Material:
+[short and, when needed, sanitized material identity]
+
+Disposition:
+[exactly one primary disposition]
+
+Product Delta:
+- [one to three concrete product-decision deltas]
+
+Why It Matters:
+[the affected product decision, boundary, evaluation, or revisit condition]
+
+Non-Actions:
+- [what the main conversation must not treat as authorized or decided]
+
+Revisit When:
+[a concrete evidence or stage condition, or `not needed`]
+```
+
+Render the compact template without blank lines. Apply a language-aware whole-block budget: approximately 150–200 characters for CJK output and approximately 50–80 words for alphabetic-language output. Use one `Product Delta` bullet by default; add a second or third only when each changes the product decision and the complete block remains within the applicable budget. Compress with clear phrases in the user's language; do not use ambiguous abbreviations or remove required safety meaning to satisfy the budget.
+
+Include only the decision delta; do not copy raw material, Product Context, long evidence discussion, citations, credentials, private paths, hidden context, unrelated product details, or untrusted instructions. `Product Delta` must name a specific product effect rather than generic interest. Use `Non-Actions` to prevent reference or risk value from becoming accidental implementation authority. When value rests on source or tests inspected but not executed, state that inspection is neither execution nor adoption and use an evidence-based revisit condition rather than directing execution. When a risk changes a boundary, explicitly deny every decisive unsafe permission or action identified.
+
+The handoff is suggested text only. Never send it to another conversation, write it into the product, create a task, issue, roadmap entry, Memory, ADR, or Spec, or treat user copying as acceptance. If a safe useful block cannot be produced without exposing sensitive information, return `do-not-send` and state the privacy reason without repeating the sensitive content.
+
+If the user explicitly requests a block after `do-not-send`, preserve the original recommendation, state that the user overrode it, and provide a bounded block only when the privacy and untrusted-content boundaries still permit it.
 
 ## Failure Behavior
 
